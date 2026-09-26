@@ -651,14 +651,10 @@ function addCommasToNumber(number) {
 
 function init() {
   switch (global.currentPage) {
-    case '/' ||
-      windowPath.endsWith(
-        '/index.html',
-      ) ||
-      windowPath.endsWith(
-        '/Flixx-Movie-App/',
-      ):
+    case '/':
     case '/index.html':
+    case '/Flixx-Movie-App/':
+    case '/Flixx-Movie-App/index.html':
       displaySlider();
       displayPopularMovies();
       break;
