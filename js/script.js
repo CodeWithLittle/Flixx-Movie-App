@@ -649,25 +649,65 @@ function addCommasToNumber(number) {
     );
 }
 
+// function init() {
+//   switch (global.currentPage) {
+//     case '/':
+//     case '/index.html':
+//     case '/Flixx-Movie-App/':
+//     case '/Flixx-Movie-App/index.html':
+//       displaySlider();
+//       displayPopularMovies();
+//       break;
+//     case '/shows.html':
+//       displayPopularShows();
+//       break;
+//     case '/movie-details.html':
+//       displayMovieDetails();
+//       break;
+//     case '/tv-details.html':
+//       displayShowDetails();
+//       break;
+//     case '/search.html':
+//       search();
+//       break;
+//   }
+
+//   highlightActiveLink();
+// }
+
 function init() {
-  switch (global.currentPage) {
-    case '/':
-    case '/index.html':
-    case '/Flixx-Movie-App/':
-    case '/Flixx-Movie-App/index.html':
+  const windowPath =
+    window.location.pathname;
+
+  switch (true) {
+    case windowPath === '/' ||
+      windowPath.endsWith(
+        '/index.html',
+      ) ||
+      windowPath.endsWith(
+        '/Flixx-Movie-App/',
+      ):
       displaySlider();
       displayPopularMovies();
       break;
-    case '/shows.html':
+    case windowPath.includes(
+      'shows.html',
+    ):
       displayPopularShows();
       break;
-    case '/movie-details.html':
+    case windowPath.includes(
+      'movie-details.html',
+    ):
       displayMovieDetails();
       break;
-    case '/tv-details.html':
+    case windowPath.includes(
+      'tv-details.html',
+    ):
       displayShowDetails();
       break;
-    case '/search.html':
+    case windowPath.includes(
+      'search.html',
+    ):
       search();
       break;
   }
