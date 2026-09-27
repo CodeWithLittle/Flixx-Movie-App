@@ -249,9 +249,6 @@ section h2 {
   margin-top: 20px;
 }
 
-.details-bottom {
-}
-
 .details-bottom li {
   margin: 15px 0;
   padding-bottom: 8px;
@@ -365,4 +362,16 @@ section h2 {
 
 .error {
   background: red;
+}
+
+@media (max-width: 768px) {
+  .details-top {
+    flex-direction: column;
+  }
+
+  .details-top img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
